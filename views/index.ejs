@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weather App</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <form class="form-group" action="/" method="post">
+        <input name="city" type="text" class="form-control" placeholder="Enter a City" required>
+        <input type="submit" class="btn btn-submit" value="Get Weather">
+      </form>
+      <% if(locals.weather !== null){ %>
+      <p><%= locals.weather %></p>
+      <% } %>
+      <% if(locals.error !== null){ %>
+      <p><%= locals.error %></p>
+      <% } %>
+    </div>
+  </body>
+</html>

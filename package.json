@@ -1,0 +1,37 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "A bootstrap weather app using node.js, express, and OpenWeather API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackmont1/weather-app.git"
+  },
+  "keywords": [
+    "Weather",
+    "app",
+    "bootstrap",
+    "node.js",
+    "API",
+    "express",
+    "OpenWeather"
+  ],
+  "author": "Jackson Montgomery",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jackmont1/weather-app/issues"
+  },
+  "homepage": "https://github.com/jackmont1/weather-app#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.4.1",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.1",
+    "request": "^2.88.2"
+  }
+}
