@@ -15,6 +15,7 @@ Original article: https://codeburst.io/build-a-weather-website-in-30-minutes-wit
     - Node.js: Visit the official Node.js website to download and install Node if you haven’t already
     - Express: Visit the official express site and install
     - Bootstrap: Visit the official bootstrap site and install
+    - Bootstrap will also require ```npm install jquery --save``` and ```npm install popper.js --save```
 
 2.  Create an empty directory named weather-app:
     
