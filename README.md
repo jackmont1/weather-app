@@ -56,18 +56,16 @@ Original article: https://codeburst.io/build-a-weather-website-in-30-minutes-wit
         <html>
           <head>
             <meta charset="utf-8">
-            <title>Test</title>
+            <title>Weather App</title>
             <link rel="stylesheet" type="text/css" href="/css/style.css">
             <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
           </head>
           <body>
-            <div class="container">
-              <fieldset>
-                <form action="/" method="post">
-                  <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
-                  <input type="submit" class="ghost-button" value="Get Weather">
-                </form>
-              </fieldset>
+            <div class="container-fluid">
+              <form class="form-group" action="/" method="post">
+                <input name="city" type="text" class="form-control" placeholder="Enter a City" required>
+                <input type="submit" class="btn btn-submit" value="Get Weather">
+              </form>
             </div>
           </body>
         </html>
