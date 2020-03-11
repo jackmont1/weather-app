@@ -155,3 +155,109 @@ Original article: https://codeburst.io/build-a-weather-website-in-30-minutes-wit
         ```
     - Now we can test our server by running ```node server.js``` and visiting ```http://localhost:3000/```
     - Now type a city name into the field and hit enter! You should see the city name displayed in your command prompt! You’ve now successfully passed data from the client to the server!
+    
+8.  Make an OpenWeather API request
+
+    - Set up the URL. The first thing we do when we receive the post request is grab the city off of req.body. Then we create a url string that we’ll use to access the OpenWeatherMap API with:
+        ```
+        app.post('/', function (req, res) {
+          let city = req.body.city;
+          let url = `api.openweathermap.org/data/2.5/weather?q={city name}&appid={your api key}`
+        ```
+    - Now that we have our URL, we can make our API call:
+        ```
+        request(url, function (err, response, body) {
+        if(err){
+          res.render('index', {weather: null, error: 'Error, please try again'});
+        ```
+    - Now that we know we have no API error, we can parse our JSON into a usable JavaScript object:
+        ```
+        } else {
+          let weather = JSON.parse(body)
+          if(weather.main == undefined){
+            res.render('index', {weather: null, error: 'Error, please try again'});
+          } else {
+            let weatherText = `It's ${weather.main.temp} degrees in ${weather.name}!`;
+            res.render('index', {weather: weatherText, error: null});
+          }
+        }
+        ```
+    - Make use of all those variables we sent back with our res.render call:
+        ```
+        <% if(weather !== null){ %>
+          <p><%= weather %></p>
+        <% } %>
+        <% if(error !== null){ %>
+          <p><%= error %></p>
+        <% } %>
+        ```
+    - The full index.ejs should look like this:
+        ```
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta charset="utf-8">
+            <title>Weather App</title>
+            <link rel="stylesheet" type="text/css" href="/css/style.css">
+            <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+          </head>
+          <body>
+            <div class="container-fluid">
+              <form class="form-group" action="/" method="post">
+                <input name="city" type="text" class="form-control" placeholder="Enter a City" required>
+                <input type="submit" class="btn btn-submit" value="Get Weather">
+              </form>
+              <% if(weather !== null){ %>
+                  <p><%= weather %></p>
+                <% } %>
+
+                <% if(error !== null){ %>
+                  <p><%= error %></p>
+                <% } %>
+            </div>
+          </body>
+        </html>
+        ```
+    - The full server.js should look like this:
+        ```
+        const express = require('express');
+        const bodyParser = require('body-parser');
+        const request = require('request');
+        const app = express()
+
+        const apiKey = '*****************';
+
+        app.use(express.static('public'));
+        app.use(bodyParser.urlencoded({ extended: true }));
+        app.set('view engine', 'ejs')
+
+        app.get('/', function (req, res) {
+          res.render('index', {weather: null, error: null});
+        })
+
+        app.post('/', function (req, res) {
+          let city = req.body.city;
+          let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
+
+          request(url, function (err, response, body) {
+            if(err){
+              res.render('index', {weather: null, error: 'Error, please try again'});
+            } else {
+              let weather = JSON.parse(body)
+              if(weather.main == undefined){
+                res.render('index', {weather: null, error: 'Error, please try again'});
+              } else {
+                let weatherText = `It's ${weather.main.temp} degrees in ${weather.name}!`;
+                res.render('index', {weather: weatherText, error: null});
+              }
+            }
+          });
+        })
+
+        app.listen(3000, function () {
+          console.log('Weather app listening on port 3000!')
+        })
+        ```
+    - Obviously, replace ```const apiKey = '*****************';``` with your own API key
+    - Now run ```node server.js``` and visit ```http://localhost:3000/```
+    
