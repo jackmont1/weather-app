@@ -184,11 +184,12 @@ Original article: https://codeburst.io/build-a-weather-website-in-30-minutes-wit
         ```
     - Make use of all those variables we sent back with our res.render call:
         ```
-        <% if(weather !== null){ %>
-          <p><%= weather %></p>
+        <% if(locals.weather !== null){ %>
+        <p><%= locals.weather %></p>
         <% } %>
-        <% if(error !== null){ %>
-          <p><%= error %></p>
+
+        <% if(locals.error !== null){ %>
+        <p><%= locals.error %></p>
         <% } %>
         ```
     - The full index.ejs should look like this:
