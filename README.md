@@ -259,5 +259,6 @@ Original article: https://codeburst.io/build-a-weather-website-in-30-minutes-wit
         })
         ```
     - Obviously, replace ```const apiKey = '*****************';``` with your own API key
+    - Before we run the program, you will need to run ```npm install request --save```
     - Now run ```node server.js``` and visit ```http://localhost:3000/```
     
