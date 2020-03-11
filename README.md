@@ -23,8 +23,9 @@ Original article: https://codeburst.io/build-a-weather-website-in-30-minutes-wit
 
 3.  Creating a server with express:
     
-    - Run npm install --save express
+    - Run ```npm install --save express```
     - Copy the boilerplate Express starter app from the official express documentation:
+        ```
         const express = require('express')
         const app = express()
 
@@ -35,15 +36,18 @@ Original article: https://codeburst.io/build-a-weather-website-in-30-minutes-wit
         app.listen(3000, function () {
           console.log('Weather app listening on port 3000!')
         })
-    - You can test your server by running node server.js
+        ```
+    - You can test your server by running ```node server.js```
     
 4.  Setting up the index view:
 
     - We will be using ejs so we can respond to root requests with a file instead of just text
-    - First, install ejs in terminal by running npm install ejs --save
+    - First, install ejs in terminal by running ```npm install ejs --save```
     - Set up the template engine with this line of code (just below our require statements) in our server.js file:
-        app.set('view engine', 'ejs')
+        ```app.set('view engine', 'ejs')```
     - Here is our boilerplate ejs file:
+        ```
+        <!DOCTYPE html>
         <html>
           <head>
             <meta charset="utf-8">
@@ -62,4 +66,5 @@ Original article: https://codeburst.io/build-a-weather-website-in-30-minutes-wit
             </div>
           </body>
         </html>
-   - We now have to install bootstrap in terminal by running npm install bootstrap --save
+        ```
+   - We now have to install bootstrap in terminal by running ```npm install bootstrap --save```
