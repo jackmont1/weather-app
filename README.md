@@ -41,3 +41,27 @@ Original article: https://codeburst.io/build-a-weather-website-in-30-minutes-wit
 
     - We will be using ejs so we can respond to root requests with a file instead of just text
     - First, install ejs in terminal by running npm install ejs --save
+    - Set up the template engine with this line of code (just below our require statements) in our server.js file:
+        app.set('view engine', 'ejs')
+    - Here is our boilerplate ejs file:
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta charset="utf-8">
+            <title>Test</title>
+            <link rel="stylesheet" type="text/css" href="/css/style.css">
+            <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+          </head>
+          <body>
+            <div class="container">
+              <fieldset>
+                <form action="/" method="post">
+                  <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
+                  <input type="submit" class="ghost-button" value="Get Weather">
+                </form>
+              </fieldset>
+            </div>
+          </body>
+        </html>
+       
+   - We now have to install bootstrap in terminal by running npm install bootstrap --save
