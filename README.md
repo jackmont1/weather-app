@@ -154,3 +154,4 @@ Original article: https://codeburst.io/build-a-weather-website-in-30-minutes-wit
         })
         ```
     - Now we can test our server by running ```node server.js``` and visiting ```http://localhost:3000/```
+    - Now type a city name into the field and hit enter! You should see the city name displayed in your command prompt! You’ve now successfully passed data from the client to the server!
