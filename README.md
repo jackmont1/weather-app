@@ -90,3 +90,23 @@ Original article: https://codeburst.io/build-a-weather-website-in-30-minutes-wit
             })
         ``` 
     - At this point, we can test our server again by running ```node server.js``` and visiting ```http://localhost:3000/```
+    
+6.  Adding custom CSS:
+    
+    - Even though we care using the bootstrap framework, you may want to add custom CSS
+    - You can do this by making a new directory in weather-app: 
+        ```
+        mkdir public
+        ```
+    - Then, a folder called CSS
+        ```
+        mkdir CSS
+        ```
+    - Then, a file called styles.css
+        ```
+        touch styles.css
+        ```
+    - Express wont allow access to this file by default, so we need to expose it with the following line of code:
+        ```
+        app.use(express.static('public'));
+        ```
