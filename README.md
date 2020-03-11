@@ -69,3 +69,4 @@ Original article: https://codeburst.io/build-a-weather-website-in-30-minutes-wit
         ```
     - We now have to install bootstrap in terminal by running ```npm install bootstrap --save```
     - At this point, we can test our server again by running ```node server.js```
+
