@@ -38,7 +38,7 @@ Original article: https://codeburst.io/build-a-weather-website-in-30-minutes-wit
           console.log('Weather app listening on port 3000!')
         })
         ```
-    - You can test your server by running ```node server.js```
+    - You can test your server by running ```node server.js``` and visiting ```http://localhost:3000/```
     
 4.  Setting up the index view:
 
