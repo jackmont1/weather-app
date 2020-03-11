@@ -139,3 +139,18 @@ Original article: https://codeburst.io/build-a-weather-website-in-30-minutes-wit
         ```
         npm install body-parser --save
         ```
+    - Once installed, we can require body-parser and make use of it in server.js:
+        ```
+        const bodyParser = require('body-parser');
+        // ...
+        // ...
+        app.use(bodyParser.urlencoded({ extended: true }));
+        ```
+    - Finally, update the POST route:
+        ```
+        app.post('/', function (req, res) {
+          res.render('index');
+          console.log(req.body.city);
+        })
+        ```
+    - Now we can test our server by running ```node server.js``` and visiting ```http://localhost:3000/```
