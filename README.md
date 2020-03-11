@@ -110,3 +110,18 @@ Original article: https://codeburst.io/build-a-weather-website-in-30-minutes-wit
         ```
         app.use(express.static('public'));
         ```
+    - By now, server.js should look like this:
+        ```
+        const express = require('express');
+        const app = express()
+
+        app.use(express.static('public'));
+        app.set('view engine', 'ejs')
+
+        app.get('/', function (req, res) {
+          res.render('index');
+        })
+        app.listen(3000, function () {
+          console.log('Weather app listening on port 3000!')
+        })
+        ```
