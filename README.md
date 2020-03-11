@@ -7,7 +7,7 @@ Check him out here: https://github.com/bmorelli25
 
 Original article: https://codeburst.io/build-a-weather-website-in-30-minutes-with-node-js-express-openweather-a317f904897b
 
-##1.  Pre-Project Setup
+1.  ##Pre-Project Setup
     Here’s what you’ll need:
 
     - OpenWeatherMap.org account for API key
@@ -15,13 +15,13 @@ Original article: https://codeburst.io/build-a-weather-website-in-30-minutes-wit
     - Express: Visit the official express site and install
     - Bootstrap: Visit the official bootstrap site and install
 
-##2.  Create an empty directory named weather-app:
+2.  Create an empty directory named weather-app:
     
     - Open up your console, navigate to the new directory and run npm init
     - Fill out the required information to initialize the project
     - Within the weather-app directory, create a file named server.js — this file will house the code for the application.
 
-##3.  Creating a server with express:
+3.  Creating a server with express:
     
     - Run ```npm install --save express```
     - Copy the boilerplate Express starter app from the official express documentation:
@@ -39,7 +39,7 @@ Original article: https://codeburst.io/build-a-weather-website-in-30-minutes-wit
         ```
     - You can test your server by running ```node server.js```
     
-##4.  Setting up the index view:
+4.  Setting up the index view:
 
     - We will be using ejs so we can respond to root requests with a file instead of just text
     - First, install ejs in terminal by running ```npm install ejs --save```
