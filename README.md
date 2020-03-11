@@ -125,3 +125,16 @@ Original article: https://codeburst.io/build-a-weather-website-in-30-minutes-wit
           console.log('Weather app listening on port 3000!')
         })
         ```
+
+7.  Create a POST route
+
+    - Our app already has a GET request, now we need a POST request:
+        ```
+        app.post('/', function (req, res) {
+          res.render('index');
+        })
+        ```
+    - Install express middleware body-parser. This will allow us to make use of the key-value pairs stored on the req-body object. In this case, the city name inputted by the user.
+        ```
+        npm install body-parser --save
+        ```
