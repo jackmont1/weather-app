@@ -44,8 +44,6 @@ Original article: https://codeburst.io/build-a-weather-website-in-30-minutes-wit
     - Set up the template engine with this line of code (just below our require statements) in our server.js file:
         app.set('view engine', 'ejs')
     - Here is our boilerplate ejs file:
-        <!--
-        <!DOCTYPE html>
         <html>
           <head>
             <meta charset="utf-8">
@@ -64,5 +62,4 @@ Original article: https://codeburst.io/build-a-weather-website-in-30-minutes-wit
             </div>
           </body>
         </html>
-        -->
    - We now have to install bootstrap in terminal by running npm install bootstrap --save
