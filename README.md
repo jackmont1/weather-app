@@ -106,7 +106,7 @@ Original article: https://codeburst.io/build-a-weather-website-in-30-minutes-wit
         ```
         touch styles.css
         ```
-    - Express wont allow access to this file by default, so we need to expose it with the following line of code:
+    - Express wont allow access to this file by default, so we need to expose it with the following line of code in server.js:
         ```
         app.use(express.static('public'));
         ```
