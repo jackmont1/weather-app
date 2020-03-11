@@ -208,13 +208,12 @@ Original article: https://codeburst.io/build-a-weather-website-in-30-minutes-wit
                 <input name="city" type="text" class="form-control" placeholder="Enter a City" required>
                 <input type="submit" class="btn btn-submit" value="Get Weather">
               </form>
-              <% if(weather !== null){ %>
-                  <p><%= weather %></p>
-                <% } %>
-
-                <% if(error !== null){ %>
-                  <p><%= error %></p>
-                <% } %>
+              <% if(locals.weather !== null){ %>
+              <p><%= locals.weather %></p>
+              <% } %>
+              <% if(locals.error !== null){ %>
+              <p><%= locals.error %></p>
+              <% } %>
             </div>
           </body>
         </html>
@@ -238,7 +237,7 @@ Original article: https://codeburst.io/build-a-weather-website-in-30-minutes-wit
 
         app.post('/', function (req, res) {
           let city = req.body.city;
-          let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
+          let url = `api.openweathermap.org/data/2.5/weather?q={city name}&appid={your api key}`
 
           request(url, function (err, response, body) {
             if(err){
