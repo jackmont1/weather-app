@@ -46,6 +46,9 @@ Original article: https://codeburst.io/build-a-weather-website-in-30-minutes-wit
     - First, install ejs in terminal by running ```npm install ejs --save```
     - Set up the template engine with this line of code (just below our require statements) in our server.js file:
         ```app.set('view engine', 'ejs')```
+    - Make a new directory called views, and within that directory, create a file called index.ejs:
+        ```mkdir views```
+        ```touch index.ejs```
     - Here is our boilerplate ejs file:
         ```
         <!DOCTYPE html>
